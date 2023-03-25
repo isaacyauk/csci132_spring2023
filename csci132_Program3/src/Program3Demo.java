@@ -17,13 +17,13 @@ public class Program3Demo
         StackBuilding stack = new StackBuilding();
 
         System.out.println("Welcome to the Gianforte Hall Builder");
-        printmenu();
-        Scanner sc = new Scanner(System.in);
+        printMenuOptions();
+        Scanner inputFinder = new Scanner(System.in);
 
         int choice = 0;
         while(choice != 6) {
             System.out.println("Your choice?");
-            choice = sc.nextInt();
+            choice = inputFinder.nextInt();
             //System.out.println();
             if(choice == 1) {
                 stack.printStack();
@@ -36,8 +36,8 @@ public class Program3Demo
             }
             if(choice == 4) {
                 System.out.println("What class are you looking for?");
-                String search = sc.next();
-                search += sc.nextLine();
+                String search = inputFinder.next();
+                search += inputFinder.nextLine();
                 stack.searchForClassroom(search);
             }
             if(choice == 5) {
