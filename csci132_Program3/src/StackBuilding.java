@@ -39,10 +39,23 @@ public class StackBuilding
                 if (choice == 1)
                 {
                     // TODO: add logic for a new classroom entry via scanner
+                    // What course?
+                    // attach string input value to the floor objec
+                    System.out.println("What CS course will be offered here?");
+                    Scanner userResponse = new Scanner(System.in);
+                    String userString = userResponse.next();
+
+                    Floor add = new Floor("Classroom", userString, this.buildingSize + 1);
+
+                    this.top_of_building++;
+                    data[this.top_of_building] = add;
+                    this.buildingSize++;
+
                 }
                 if (choice == 2)
                 {
                     // TODO: add logic for a new office entry via scanner
+                    System.out.println("What professor will have this office?");
 
                 }
                 if (choice == 3)
@@ -71,7 +84,7 @@ public class StackBuilding
 
     public void printStack()
     {
-        for (int i = this.buildingSize - 1; 1 >= 0; i--)
+        for (int i = this.buildingSize - 1; i >= 0; i--)
         {
             this.data[i].printInfo();
         }
