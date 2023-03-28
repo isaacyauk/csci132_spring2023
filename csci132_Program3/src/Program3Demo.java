@@ -28,21 +28,24 @@ public class Program3Demo
             if(choice == 1) {
                 stack.printStack();
             }
-            if(choice == 2) {
+            if(choice == 2)
+            {
                 stack.addFloor();
             }
-            if(choice == 3) {
+            if(choice == 3)
+            {
                 stack.removeFloor();
             }
-            if(choice == 4) {
+            if(choice == 4)
+            {
                 System.out.println("What class are you looking for?");
                 String search = inputFinder.next();
                 search += inputFinder.nextLine();
                 stack.searchForClassroom(search);
             }
-            if(choice == 5) {
-                stack.printBuildingInfo();
-            }
+//            if(choice == 5) {
+//                stack.printBuildingInfo();
+//            }
             if(choice == 6) {
                 System.exit(0);
             }

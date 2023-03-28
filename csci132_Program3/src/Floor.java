@@ -13,6 +13,7 @@ public class Floor
 
     public void printInfo()
     {
+        // TODO: Format and make things more pretty here!
         System.out.println(this.floor_number + "\n" + this.type_of_floor + "(" + this.info + ")");
     }
 

@@ -33,14 +33,11 @@ public class StackBuilding
 
             int choice = 0;
             while (choice != 4)
-                System.out.println("Your choice?");
-            choice = inputFinder.nextInt();
             {
+                System.out.println("Your choice?");
+                choice = inputFinder.nextInt();
                 if (choice == 1)
                 {
-                    // TODO: add logic for a new classroom entry via scanner
-                    // What course?
-                    // attach string input value to the floor objec
                     System.out.println("What CS course will be offered here?");
                     Scanner userResponse = new Scanner(System.in);
                     String userString = userResponse.next();
@@ -50,17 +47,30 @@ public class StackBuilding
                     this.top_of_building++;
                     data[this.top_of_building] = add;
                     this.buildingSize++;
-
                 }
                 if (choice == 2)
                 {
-                    // TODO: add logic for a new office entry via scanner
                     System.out.println("What professor will have this office?");
+                    Scanner userResponse = new Scanner(System.in);
+                    String userString = userResponse.next();
 
+                    Floor add = new Floor("office", userString, this.buildingSize + 1);
+
+                    this.top_of_building++;
+                    data[this.top_of_building] = add;
+                    this.buildingSize++;
                 }
                 if (choice == 3)
                 {
-                    // TODO: add logic for a new research lab entry via scanner
+                    System.out.println("What type of Research Lab will be here?");
+                    Scanner userResponse = new Scanner(System.in);
+                    String userString = userResponse.next();
+
+                    Floor add = new Floor("research lab", userString, this.buildingSize + 1);
+
+                    this.top_of_building++;
+                    data[this.top_of_building] = add;
+                    this.buildingSize++;
 
                 }
                 if (choice == 4)
@@ -71,13 +81,6 @@ public class StackBuilding
 
                 printSubmenuOptions();
 
-                // TODO: make sure that you correctly add all the right information here
-                this.top_of_building++;
-                data[this.top_of_building] = newFloor;
-                this.buildingSize++;
-
-
-
             }
         }
     }
@@ -87,6 +90,33 @@ public class StackBuilding
         for (int i = this.buildingSize - 1; i >= 0; i--)
         {
             this.data[i].printInfo();
+        }
+    }
+
+    public void removeFloor()
+    {
+        if (this.buildingSize == 0)
+        {
+            return;
+        }
+        else
+        {
+            this.data[this.top_of_building] = null;
+            this.top_of_building--;
+            this.buildingSize--;
+        }
+    }
+
+    public Floor searchForClassroom(Floor floorToFind)
+    {
+        if(this.buildingSize != 0)
+        {
+            // TODO: Find the floor that is being passed in
+        }
+        else
+        {
+            System.out.println("There are no floors left to search through...");
+            return null;
         }
     }
 
