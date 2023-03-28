@@ -42,17 +42,5 @@ public class Lab8Demo
         {
             System.out.println("The stack is now empty...");
         }
-
-
-
-
-
-
-
-
-
-
-
     }
-
 }
