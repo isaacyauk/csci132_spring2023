@@ -43,9 +43,10 @@ public class Program3Demo
                 search += inputFinder.nextLine();
                 stack.searchForClassroom(search);
             }
-//            if(choice == 5) {
-//                stack.printBuildingInfo();
-//            }
+            if(choice == 5)
+            {
+                stack.printBuildingInfo();
+            }
             if(choice == 6) {
                 System.exit(0);
             }

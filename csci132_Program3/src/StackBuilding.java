@@ -6,7 +6,6 @@ public class StackBuilding
         System.out.println("1. New classroom");
         System.out.println("2. New office");
         System.out.println("3. New research lab");
-        // You don't have to do option 4 if you don't want
         System.out.println("4. Return to previous menu");
         System.out.println("");
     }
@@ -109,7 +108,7 @@ public class StackBuilding
 
     public Floor searchForClassroom(Floor floorToFind)
     {
-        if(this.buildingSize != 0)
+        if (this.buildingSize != 0)
         {
             // TODO: Find the floor that is being passed in
         }
