@@ -3,12 +3,11 @@ import java.util.Scanner;
 public class StackBuilding
 {
     public static void printSubmenuOptions() {
-        System.out.println("");
+        System.out.println("  _______ SUB MENU _______");
         System.out.println("1. New classroom");
         System.out.println("2. New office");
         System.out.println("3. New research lab");
-        System.out.println("4. Return to previous menu");
-        System.out.println("");
+        System.out.println("4. Return to previous menu\n");
     }
     private Floor[] data;
     private int top_of_building;
@@ -40,7 +39,7 @@ public class StackBuilding
                 {
                     System.out.println("What CS course will be offered here?");
                     Scanner userResponse = new Scanner(System.in);
-                    String userString = userResponse.next();
+                    String userString = userResponse.nextLine();
 
                     Floor add = new Floor("Classroom", userString, this.buildingSize + 1);
 
@@ -52,7 +51,7 @@ public class StackBuilding
                 {
                     System.out.println("What professor will have this office?");
                     Scanner userResponse = new Scanner(System.in);
-                    String userString = userResponse.next();
+                    String userString = userResponse.nextLine();
 
                     Floor add = new Floor("Office", userString, this.buildingSize + 1);
 
@@ -64,7 +63,7 @@ public class StackBuilding
                 {
                     System.out.println("What type of Research Lab will be here?");
                     Scanner userResponse = new Scanner(System.in);
-                    String userString = userResponse.next();
+                    String userString = userResponse.nextLine();
 
                     Floor add = new Floor("Research Lab", userString, this.buildingSize + 1);
 
@@ -80,7 +79,6 @@ public class StackBuilding
                 }
 
                 printSubmenuOptions();
-
             }
         }
     }
@@ -91,6 +89,8 @@ public class StackBuilding
         {
             this.data[i].printInfo();
         }
+        System.out.println("_웃___|_______________________________________");
+        System.out.println("\n");
     }
 
     public void removeFloor()
@@ -121,6 +121,7 @@ public class StackBuilding
                     // Compares the string element of the Floor item stored in the array to the incoming value
                     if(Objects.equals(floorToFind, this.data[i].getInfo()))
                     {
+                        // TODO: Add properly formatted info of floor location
                         System.out.println("eyyyyyyyyyyyyy we found da thing");
                     }
                 }
@@ -160,8 +161,11 @@ public class StackBuilding
             }
         }
 
-        System.out.println("Number of Classrooms: " + num_of_classrooms);
-        System.out.println("Number of Offices: " + num_of_offices);
-        System.out.println("Number of Research Labs: " + num_of_labs);
+        // TODO: Format this output to flow a little better and look nicer
+        System.out.println("+-------- BUILDING STATS ---------+");
+        System.out.println("| \tNumber of Classrooms: " + num_of_classrooms);
+        System.out.println("| \tNumber of Offices: " + num_of_offices);
+        System.out.println("| \tNumber of Research Labs: " + num_of_labs);
+        System.out.println("+---------------------------------+\n");
     }
 }

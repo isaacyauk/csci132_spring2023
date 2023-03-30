@@ -2,21 +2,19 @@ import java.util.Scanner;
 public class Program3Demo
 {
     public static void printMenuOptions() {
-        System.out.println("");
+        System.out.println("  _______ MAIN MENU _______");
         System.out.println("1. View Current Building Plan");
         System.out.println("2. Add a new floor");
         System.out.println("3. Demolish top floor");
         System.out.println("4. Search for a classroom");
         System.out.println("5. View Building Information");
-        System.out.println("6. Exit");
-        System.out.println("");
+        System.out.println("6. Exit\n");
     }
     public static void main(String[] args)
     {
-
         StackBuilding stack = new StackBuilding();
 
-        System.out.println("Welcome to the Gianforte Hall Builder");
+        System.out.println("\nWelcome to the Gianforte Hall Builder! Please select a number option from below\n");
         printMenuOptions();
         Scanner inputFinder = new Scanner(System.in);
 
@@ -52,7 +50,6 @@ public class Program3Demo
             }
 
             printMenuOptions();
-
         }
     }
 }
