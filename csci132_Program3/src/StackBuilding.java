@@ -116,19 +116,15 @@ public class StackBuilding
             for (int i = 0; i < this.buildingSize; i++)
             {
                 System.out.println("TEST");
-                try
+                // Compares the string element of the Floor item stored in the array to the incoming value
+                if(Objects.equals(floorToFind, this.data[i].getInfo()))
                 {
-                    // Compares the string element of the Floor item stored in the array to the incoming value
-                    if(Objects.equals(floorToFind, this.data[i].getInfo()))
-                    {
-                        // TODO: Add properly formatted info of floor location
-                        System.out.println("eyyyyyyyyyyyyy we found da thing");
-                    }
+                    // TODO: Add properly formatted info of floor location
+                    System.out.println("eyyyyyyyyyyyyy we found da thing");
                 }
-                catch(Exception e)
+                if((i + 1) == this.buildingSize)
                 {
-                    // TODO: Make this message actually print when the case is triggered
-                    System.out.println("That class was not found to be offered in this buiilding.");
+                    System.out.println("The class you searched for does not appear to be offered in this building.");
                 }
             }
         }
@@ -161,7 +157,6 @@ public class StackBuilding
             }
         }
 
-        // TODO: Format this output to flow a little better and look nicer
         System.out.println("+-------- BUILDING STATS ---------+");
         System.out.println("| \tNumber of Classrooms: " + num_of_classrooms);
         System.out.println("| \tNumber of Offices: " + num_of_offices);
