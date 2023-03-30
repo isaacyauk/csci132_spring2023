@@ -17,4 +17,14 @@ public class Floor
         System.out.println(this.floor_number + "\n" + this.type_of_floor + "(" + this.info + ")");
     }
 
+    public String getInfo()
+    {
+        return this.info;
+    }
+
+    public String getFloorType()
+    {
+        return this.type_of_floor;
+    }
+
 }

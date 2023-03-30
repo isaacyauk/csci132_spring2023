@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 public class StackBuilding
 {
@@ -53,7 +54,7 @@ public class StackBuilding
                     Scanner userResponse = new Scanner(System.in);
                     String userString = userResponse.next();
 
-                    Floor add = new Floor("office", userString, this.buildingSize + 1);
+                    Floor add = new Floor("Office", userString, this.buildingSize + 1);
 
                     this.top_of_building++;
                     data[this.top_of_building] = add;
@@ -65,7 +66,7 @@ public class StackBuilding
                     Scanner userResponse = new Scanner(System.in);
                     String userString = userResponse.next();
 
-                    Floor add = new Floor("research lab", userString, this.buildingSize + 1);
+                    Floor add = new Floor("Research Lab", userString, this.buildingSize + 1);
 
                     this.top_of_building++;
                     data[this.top_of_building] = add;
@@ -108,13 +109,26 @@ public class StackBuilding
 
     public void searchForClassroom(String floorToFind)
     {
+        // catches the edge case where the user tries to search in an empty building
         if (this.buildingSize != 0)
         {
-            // iterates through the stack array based on how many things are in the it
-            for (int i = 0; i < buildingSize; i++)
+            // iterates through the stack array based on how many things are in the building size
+            for (int i = 0; i < this.buildingSize; i++)
             {
                 System.out.println("TEST");
-                // TODO: Add logic for checking wether or not the thing exists!
+                try
+                {
+                    // Compares the string element of the Floor item stored in the array to the incoming value
+                    if(Objects.equals(floorToFind, this.data[i].getInfo()))
+                    {
+                        System.out.println("eyyyyyyyyyyyyy we found da thing");
+                    }
+                }
+                catch(Exception e)
+                {
+                    // TODO: Make this message actually print when the case is triggered
+                    System.out.println("That class was not found to be offered in this buiilding.");
+                }
             }
         }
         else
@@ -125,12 +139,29 @@ public class StackBuilding
 
     public void printBuildingInfo()
     {
-        for (int i = 0; i < buildingSize; i++)
+        int num_of_classrooms = 0;
+        int num_of_offices = 0;
+        int num_of_labs = 0;
+
+        for (int i = 0; i < this.buildingSize; i++)
         {
-            data[i].printInfo();
+            // Compares the floor_type string element of the Floor item stored in the array to one of the 3 defined room values
+            if(Objects.equals(this.data[i].getFloorType(), "Classroom"))
+            {
+                num_of_classrooms++;
+            }
+            if(Objects.equals(this.data[i].getFloorType(), "Office"))
+            {
+                num_of_offices++;
+            }
+            if(Objects.equals(this.data[i].getFloorType(), "Research Lab"))
+            {
+                num_of_labs++;
+            }
         }
+
+        System.out.println("Number of Classrooms: " + num_of_classrooms);
+        System.out.println("Number of Offices: " + num_of_offices);
+        System.out.println("Number of Research Labs: " + num_of_labs);
     }
-
-
-
 }
