@@ -106,20 +106,30 @@ public class StackBuilding
         }
     }
 
-    public Floor searchForClassroom(Floor floorToFind)
+    public void searchForClassroom(String floorToFind)
     {
         if (this.buildingSize != 0)
         {
-            // TODO: Find the floor that is being passed in
+            // iterates through the stack array based on how many things are in the it
+            for (int i = 0; i < buildingSize; i++)
+            {
+                System.out.println("TEST");
+                // TODO: Add logic for checking wether or not the thing exists!
+            }
         }
         else
         {
             System.out.println("There are no floors left to search through...");
-            return null;
         }
     }
 
-
+    public void printBuildingInfo()
+    {
+        for (int i = 0; i < buildingSize; i++)
+        {
+            data[i].printInfo();
+        }
+    }
 
 
 
