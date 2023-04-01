@@ -115,12 +115,11 @@ public class StackBuilding
             // iterates through the stack array based on how many things are in the building size
             for (int i = 0; i < this.buildingSize; i++)
             {
-                System.out.println("TEST");
                 // Compares the string element of the Floor item stored in the array to the incoming value
                 if(Objects.equals(floorToFind, this.data[i].getInfo()))
                 {
-                    // TODO: Add properly formatted info of floor location
-                    System.out.println("eyyyyyyyyyyyyy we found da thing");
+                    System.out.println(floorToFind + " is on floor #" + i);
+                    break;
                 }
                 if((i + 1) == this.buildingSize)
                 {
