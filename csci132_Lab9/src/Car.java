@@ -14,5 +14,9 @@ public class Car
         this.VIPStatus = isVIP;
     }
 
-
+    public void printCar(int car_num)
+    {
+        System.out.println("Current Car Wash Queue\n" + "----------------------");
+        System.out.println(car_num + "." + " (" + ownerName + ")");
+    }
 }

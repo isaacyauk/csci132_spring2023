@@ -17,6 +17,7 @@ public class QueueArray
 
     public void enqueue(Car newCar)
     {
+        System.out.println("Adding " + newCar.getMake() + " (" + newCar.getOwnerName() + ")");
         if(this.capacity == 0)
         {
             System.out.println("Error; Queue is full!");
@@ -28,6 +29,17 @@ public class QueueArray
             this.back++;
             this.size++;
         }
+    }
+
+    public void printQueue()
+    {
+        int counter = 1;
+        for (int i = 0; i < this.back; i++)
+        {
+            this.car_line[i].printCar(counter);
+            counter++;
+        }
+
     }
 
 }
