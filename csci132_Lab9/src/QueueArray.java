@@ -5,6 +5,8 @@ public class QueueArray
     private int front;
     private int back;
     private int capacity;
+    private int cars_served;
+    private double earnings;
 
     public QueueArray(int size)
     {
@@ -40,6 +42,16 @@ public class QueueArray
         }
         else
         {
+            Car removed = this.car_line[front];
+            if(removed.isVIPStatus())
+            {
+                earnings += 6.00;
+            }
+            else
+            {
+                earnings += 10.00;
+            }
+
             System.out.println("Car has been washed. Removing " + this.car_line[front].getMake()
                     + " (" + this.car_line[front].getOwnerName() + ") from the queue.");
             for (int i = 0; i < back - 1; i++)
@@ -47,6 +59,9 @@ public class QueueArray
                 this.car_line[i] = this.car_line[i+1];
             }
 
+            cars_served++;
+
+            // Checking the back and eventrually setting it to null once the queue
             if (back < capacity)
             {
                 this.car_line[back] = null;
@@ -92,6 +107,12 @@ public class QueueArray
         }
     }
 
+    public void printStats()
+    {
+        System.out.println("Car Wash Statistics\n" + "----------------------");
+        System.out.println("Number of Cars Serviced: " + cars_served);
+        System.out.println("Today's earnings: $" + earnings);
+    }
 
 
 }

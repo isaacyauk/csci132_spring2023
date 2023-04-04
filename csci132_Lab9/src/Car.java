@@ -28,4 +28,14 @@ public class Car
     {
         return this.ownerName;
     }
+
+    public String getInfo()
+    {
+        return this.makeAndModel + " (" + this.ownerName + ")";
+    }
+
+    public boolean isVIPStatus()
+    {
+        return this.VIPStatus;
+    }
 }
