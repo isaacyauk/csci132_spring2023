@@ -16,7 +16,16 @@ public class Car
 
     public void printCar(int car_num)
     {
-        System.out.println("Current Car Wash Queue\n" + "----------------------");
-        System.out.println(car_num + "." + " (" + ownerName + ")");
+        System.out.println(car_num + ". " + this.makeAndModel + " (" + ownerName + ")");
+    }
+
+    public String getMake()
+    {
+        return this.makeAndModel;
+    }
+
+    public String getOwnerName()
+    {
+        return this.ownerName;
     }
 }

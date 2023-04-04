@@ -8,7 +8,7 @@ public class QueueArray
 
     public QueueArray(int size)
     {
-        this.car_line = new car_line[size];
+        this.car_line = new Car[size];
         this.size = 0;
         this.front = 0;
         this.back = 0;
@@ -18,9 +18,9 @@ public class QueueArray
     public void enqueue(Car newCar)
     {
         System.out.println("Adding " + newCar.getMake() + " (" + newCar.getOwnerName() + ")");
-        if(this.capacity == 0)
+        if(this.size == this.capacity)
         {
-            System.out.println("Error; Queue is full!");
+            System.out.println("Error: Queue is full- Cannot add " + newCar.getMake() + " (" + newCar.getOwnerName() + ")");
             return;
         }
         else
@@ -31,15 +31,67 @@ public class QueueArray
         }
     }
 
+    public void dequeue()
+    {
+        if(this. size == 0)
+        {
+            System.out.println("Error... Line is empty");
+            return;
+        }
+        else
+        {
+            System.out.println("Car has been washed. Removing " + this.car_line[front].getMake()
+                    + " (" + this.car_line[front].getOwnerName() + ") from the queue.");
+            for (int i = 0; i < back - 1; i++)
+            {
+                this.car_line[i] = this.car_line[i+1];
+            }
+
+            if (back < capacity)
+            {
+                this.car_line[back] = null;
+            }
+            this.back--;
+            this.size--;
+        }
+    }
+
     public void printQueue()
     {
         int counter = 1;
+
+        System.out.println("Current Car Wash Queue\n" + "----------------------");
         for (int i = 0; i < this.back; i++)
         {
             this.car_line[i].printCar(counter);
             counter++;
         }
-
     }
+
+    public Car peek()
+    {
+        if (this.size != 0)
+        {
+            return this.car_line[front];
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public boolean isEmpty()
+    {
+        if (this.size == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
 
 }

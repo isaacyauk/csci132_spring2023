@@ -23,7 +23,7 @@ public class Lab9Demo
         System.out.println();
 
         // Print the queue
-        car_wash_queue.printQueue();
+            car_wash_queue.printQueue();
 
         // Get current front of queue
         Car front = car_wash_queue.peek();
