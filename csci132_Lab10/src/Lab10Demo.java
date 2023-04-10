@@ -15,6 +15,22 @@ public class Lab10Demo {
     public static int[] selection_sort(int[] array) {
 
         //TODO: Write algorithm for selection sort here
+        int start = 0;
+        int lowest_num = 0;
+        int temp = 0;
+
+        // Overall loop, based on how many numbers are sent in
+        for (int i = 0; i < array.length; i++)
+        {
+            // Check to see if the current index is lowest and if it is, set it to the lowest_num
+            if (array[i] < array[lowest_num])
+            {
+                array[lowest_num] = array[i];
+            }
+            start++;
+
+
+        }
 
 
         return array;
