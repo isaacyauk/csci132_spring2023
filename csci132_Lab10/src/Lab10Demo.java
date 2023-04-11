@@ -12,35 +12,33 @@ public class Lab10Demo {
         return array;
     }
 
-    public static int[] selection_sort(int[] array) {
-
-        //TODO: Write algorithm for selection sort here
-        int start = 0;
-        int lowest_num = 0;
-        int temp = 0;
-
-        // Overall loop, based on how many numbers are sent in
-        for (int i = 0; i < array.length; i++)
+    public static int[] selection_sort(int[] array)
+    {
+        int start_index = array.length;
+        for (int i = 0; i < start_index - 1; i++) // Looping through the number of things in the array - 1 (cuz the last idx should be sorted)
         {
-            // Check to see if the current index is lowest and if it is, set it to the lowest_num
-            if (array[i] < array[lowest_num])
+            int min_pos = i;
+            for (int j = i + 1; j < start_index; j++) // Looping through the content of the array and sorting it
             {
-                array[lowest_num] = array[i];
+                // Check to see if the current index is lowest and if it is, set it to the min_pos
+                if (array[j] < array[min_pos]) // j is the content of the array
+                {
+                    min_pos = j;
+                }
             }
-            start++;
 
-
+                // Does the hokey pokey swappy boppy here
+                int temp = array[min_pos];
+                array[min_pos] = array[i];
+                array[i] = temp;
         }
-
-
         return array;
     }
-
 
     public static void main(String[] args) {
 
         // Sort an array of size 15
-        int[] array1 = getRandomArray(15);
+        int[] array1 = getRandomArray(15); //TODO: CHANGE THIS BACK TO 15 BEFORE SUBMIT
         System.out.println("Input: " + Arrays.toString(array1));
         long start_time = System.nanoTime();
         int[] sorted_array = selection_sort(array1);
