@@ -16,10 +16,15 @@ public class Program4Demo {
         System.out.println("");
     }
 
+    public static Customer createCustomer()
+    {
+        // TODO: add the logic for creating a customer here!
+    }
+
     public static void main(String[] args)
     {
 
-        Queue queue = new Queue();
+        LinkedListQueue queue = new LinkedListQueue();
 
         System.out.println("Welcome to the Route 406 Sandwiches Queue");
         printMenu();
