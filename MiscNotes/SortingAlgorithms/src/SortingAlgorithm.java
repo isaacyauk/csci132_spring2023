@@ -1,7 +1,9 @@
 import java.util.Random;
-public class SortingAlgorithm {
+public class SortingAlgorithm
+{
 
-    public int[] getRandomArray(int n) {
+    public int[] getRandomArray(int n)
+    {
         int[] array = new int[n];
         Random random = new Random();
         for (int i = 0; i < array.length; i++)
@@ -27,6 +29,28 @@ public class SortingAlgorithm {
                     array[j+1] = temp;
 
                 }
+            }
+        }
+
+        return array;
+    }
+
+    public int[] selectionSort(int[] array)
+    {
+        int arrSize = array.length;
+        for(int i = 0; i < arrSize - 1; i++)
+        {
+            for (int j = i + 1; j < arrSize; j++)
+            {
+                int min_index_so_far = i;
+
+                if(array[j] < array[min_index_so_far])
+                {
+                    min_index_so_far = j;
+                }
+                int temp = array[i];
+                array[i] = array[min_index_so_far];
+                array[min_index_so_far] = temp;
             }
         }
 
