@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MiscNotes/Apr12 - Recursion/Apr12 - Recursion.iml" filepath="$PROJECT_DIR$/MiscNotes/Apr12 - Recursion/Apr12 - Recursion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MiscNotes/SortingAlgorithms/SortingAlgorithms.iml" filepath="$PROJECT_DIR$/MiscNotes/SortingAlgorithms/SortingAlgorithms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/csci132_Lab10/csci132_Lab10.iml" filepath="$PROJECT_DIR$/csci132_Lab10/csci132_Lab10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/csci132_Lab4/csci132_Lab4.iml" filepath="$PROJECT_DIR$/csci132_Lab4/csci132_Lab4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/csci132_Lab5/csci132_Lab5.iml" filepath="$PROJECT_DIR$/csci132_Lab5/csci132_Lab5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/csci132_Lab6/csci132_Lab6.iml" filepath="$PROJECT_DIR$/csci132_Lab6/csci132_Lab6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/csci132_Lab8/csci132_Lab8.iml" filepath="$PROJECT_DIR$/csci132_Lab8/csci132_Lab8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/csci132_Lab9/csci132_Lab9.iml" filepath="$PROJECT_DIR$/csci132_Lab9/csci132_Lab9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/csci132_Program1/csci132_Program1.iml" filepath="$PROJECT_DIR$/csci132_Program1/csci132_Program1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/csci132_Program2/csci132_Program2.iml" filepath="$PROJECT_DIR$/csci132_Program2/csci132_Program2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/csci132_Program3/csci132_Program3.iml" filepath="$PROJECT_DIR$/csci132_Program3/csci132_Program3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/csci132_Program4/csci132_Program4.iml" filepath="$PROJECT_DIR$/csci132_Program4/csci132_Program4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/csci_132_spring2023.iml" filepath="$PROJECT_DIR$/.idea/csci_132_spring2023.iml" />
+    </modules>
+  </component>
+</project>

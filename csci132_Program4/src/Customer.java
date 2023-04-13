@@ -14,6 +14,11 @@ public class Customer
         this.time_in_queue = t;
     }
 
+    public String getName()
+    {
+        return this.name;
+    }
+
     public void printCustomer(int order_num)
     {
         System.out.println(order_num + "." + this.name + " (" + this.order + ")");

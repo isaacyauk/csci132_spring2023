@@ -1,7 +1,5 @@
 import java.util.Scanner;
-
 public class Program4Demo {
-
 
     public static void printMenu()
     {
@@ -16,14 +14,8 @@ public class Program4Demo {
         System.out.println("");
     }
 
-    public static Customer createCustomer()
-    {
-        // TODO: add the logic for creating a customer here!
-    }
-
     public static void main(String[] args)
     {
-
         LinkedListQueue queue = new LinkedListQueue();
 
         System.out.println("Welcome to the Route 406 Sandwiches Queue");
