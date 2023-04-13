@@ -33,12 +33,12 @@ public class Program4Demo {
                 queue.printQueue();
             }
             if(choice == 2) {
-                Customer c = queue.createCustomer(false);
+                Customer c = queue.createCustomer();
                 queue.enqueue(c);
             }
             if(choice == 3)
             {
-                Customer c = queue.createCustomer(true);
+                Customer c = queue.createCustomer();
                 queue.priorityEnqueue(c);
             }
             if(choice == 4)
