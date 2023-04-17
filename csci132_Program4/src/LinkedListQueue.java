@@ -48,10 +48,8 @@ public class LinkedListQueue
 
     public Customer dequeue()
     {
-        int[] waitTimes; //TODO: use an array list!
-
-        // Handles edge case of an empty que
-        if(this.queueSize != 0 )
+        // Handles edge case of an empty que and trying to run option 4 on a queue that used to be full, but is now empty
+        if(this.queueSize != 0 && !customers.isEmpty())
         {
             // Check to see if there is still a prof in the line, creating a priority
             if (this.professor.isEmpty())
@@ -147,12 +145,12 @@ public class LinkedListQueue
         double total_wait_times = 0;
         for (int i = 0; i < waitTimes.size(); i++)
         {
-            waitTimes.add(i,total_wait_times);
+            total_wait_times += waitTimes.get(i);
         }
-        System.out.println("------- Queue Statistics -------");
-        System.out.println("Average wait time: " );
-        System.out.println("Total customers served: " + servedCustomers);
 
-        System.out.println(this.waitTimes);
+        double average_wait_time = total_wait_times / waitTimes.size();
+        System.out.println("------- Queue Statistics -------");
+        System.out.println("Average wait time: " + average_wait_time);
+        System.out.println("Total customers served: " + servedCustomers);
     }
 }
