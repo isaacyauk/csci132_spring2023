@@ -15,7 +15,6 @@ public class LinkedListQueue
         this.queueSize = 0;
     }
 
-    // TODO: Verify that this functions properly, once you can enqueue peeps
     public void printQueue()
     {
         int customerCounter = 1;
@@ -45,23 +44,34 @@ public class LinkedListQueue
 
     public Customer dequeue()
     {
-        // TODO: prioritize removing professors! if selector logic --> the prof == isEmpty then remove from students
-        if(this.queueSize !=0 )
+        // Handles edge case of an empty que
+        if(this.queueSize != 0 )
         {
-            Customer served =  this.customers.removeFirst();
-            System.out.println(served.getName() + " was served and removed from the line.");
+            // Check to see if there is still a prof in the line, creating a priority
+            if (this.professor.isEmpty())
+            {
+                Customer served =  this.customers.removeFirst();
+                System.out.println(served.getName() + " was served and removed from the line.");
+                return served;
+            }
+            else
+            {
+                Customer served =  this.professor.removeFirst();
+                System.out.println(served.getName() + " was served and removed from the line.");
+                return served;
+            }
+
             // TODO: Get current time and figure out how long the person was in the line
             // TODO: make an array list of wait times after a sucessful dequeue
-            return served;
+
         }
         else
         {
+            System.out.println("There are no customers in line! (maybe we'll get to go home early...)");
             return null;
         }
     }
 
-    // TODO: What's the parameter here?
-    //  A: Its a search var
     public void removeFromQueue(String nameToFind)
     {
         // Catching edge case where there are no people left in the queue.
