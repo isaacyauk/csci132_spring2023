@@ -63,6 +63,7 @@ public class LinkedListQueue
                 long end_time = System.nanoTime();
                 double total_wait_time = (end_time - served.getTime()) / 1000000000;
                 System.out.println("this customer waited " + total_wait_time + " seconds.");
+                this.waitTimes.add(0, total_wait_time);
                 servedCustomers++;
 
                 return served;
@@ -76,8 +77,8 @@ public class LinkedListQueue
                 long end_time = System.nanoTime();
                 double total_wait_time = (end_time - served.getTime()) / 1000000000;
                 System.out.println("this customer waited " + total_wait_time + " seconds.");
-                servedCustomers++;
                 this.waitTimes.add(0, total_wait_time);
+                servedCustomers++;
 
                 return served;
             }
@@ -143,8 +144,13 @@ public class LinkedListQueue
 
     public void printQueueStats()
     {
+        double total_wait_times = 0;
+        for (int i = 0; i < waitTimes.size(); i++)
+        {
+            waitTimes.add(i,total_wait_times);
+        }
         System.out.println("------- Queue Statistics -------");
-        System.out.println("Average wait time: ");
+        System.out.println("Average wait time: " );
         System.out.println("Total customers served: " + servedCustomers);
 
         System.out.println(this.waitTimes);
