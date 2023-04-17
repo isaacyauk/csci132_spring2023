@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Scanner;
@@ -6,12 +7,15 @@ public class LinkedListQueue
 {
     private LinkedList<Customer> customers;
     private LinkedList<Customer> professor;
+    private ArrayList<Double> waitTimes;
     private int queueSize;
+    private int servedCustomers = 0;
 
     public LinkedListQueue()
     {
         this.customers = new LinkedList<Customer>();
         this.professor = new LinkedList<Customer>();
+        this.waitTimes = new ArrayList<Double>();
         this.queueSize = 0;
     }
 
@@ -44,9 +48,7 @@ public class LinkedListQueue
 
     public Customer dequeue()
     {
-        int[] waitTimes = new int[0];
-        // TODO: make an array list of wait times after a successful dequeue
-        // TODO: make a counter for how many customers have been served
+        int[] waitTimes; //TODO: use an array list!
 
         // Handles edge case of an empty que
         if(this.queueSize != 0 )
@@ -57,9 +59,12 @@ public class LinkedListQueue
                 Customer served =  this.customers.removeFirst();
                 System.out.println(served.getName() + " was served and removed from the line.");
 
-                // TODO: Get current time and figure out how long the person was in the line
                 // Stop tracking the exe TIME here
                 long end_time = System.nanoTime();
+                double total_wait_time = (end_time - served.getTime()) / 1000000000;
+                System.out.println("this customer waited " + total_wait_time + " seconds.");
+                servedCustomers++;
+
                 return served;
             }
             else
@@ -67,9 +72,13 @@ public class LinkedListQueue
                 Customer served =  this.professor.removeFirst();
                 System.out.println(served.getName() + " was served and removed from the line.");
 
-                // TODO: Get current time and figure out how long the person was in the line
                 // Stop tracking the exe TIME here
                 long end_time = System.nanoTime();
+                double total_wait_time = (end_time - served.getTime()) / 1000000000;
+                System.out.println("this customer waited " + total_wait_time + " seconds.");
+                servedCustomers++;
+                this.waitTimes.add(0, total_wait_time);
+
                 return served;
             }
         }
@@ -136,6 +145,8 @@ public class LinkedListQueue
     {
         System.out.println("------- Queue Statistics -------");
         System.out.println("Average wait time: ");
-        System.out.println("Customers served: ");
+        System.out.println("Total customers served: " + servedCustomers);
+
+        System.out.println(this.waitTimes);
     }
 }

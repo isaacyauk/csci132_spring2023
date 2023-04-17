@@ -24,4 +24,9 @@ public class Customer
         System.out.println(order_num + ". " + this.name + " (" + this.order + ")");
     }
 
+    public Long getTime()
+    {
+        return this.time_in_queue;
+    }
+
 }
