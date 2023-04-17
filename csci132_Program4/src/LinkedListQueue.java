@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class LinkedListQueue
@@ -44,12 +45,12 @@ public class LinkedListQueue
 
     public Customer dequeue()
     {
-        // TODO: proirtive removing professors! if selector logic --> the prof == isEmpty then remove from students
+        // TODO: prioritize removing professors! if selector logic --> the prof == isEmpty then remove from students
         if(this.queueSize !=0 )
         {
             Customer served =  this.customers.removeFirst();
             System.out.println(served.getName() + " was served and removed from the line.");
-            // TODO: Get current time and igure out how long the person was in the line
+            // TODO: Get current time and figure out how long the person was in the line
             // TODO: make an array list of wait times after a sucessful dequeue
             return served;
         }
@@ -61,10 +62,33 @@ public class LinkedListQueue
 
     // TODO: What's the parameter here?
     //  A: Its a search var
-    public void removeFromQueue()
+    public void removeFromQueue(String nameToFind)
     {
-        //TODO: fill this out!
+        // Catching edge case where there are no people left in the queue.
+        if (this.queueSize != 0)
+        {
+            // Searching through the Professor queue here
+            for (Customer each_prof : this.professor)
+            {
+                if (Objects.equals(each_prof.getName(), nameToFind))
+                {
+                    System.out.println("Hey! I found " + each_prof.getName());
+                }
+            }
 
+            // Searching through the Student queue here
+            for (Customer each_student : this.customers)
+            {
+                if (Objects.equals(each_student.getName(), nameToFind))
+                {
+                    System.out.println("Hey! I found " + each_student.getName());
+                }
+                else    // At this point, all the elements of the queues have been searched through
+                {
+                    System.out.println("ERROR. That person wasn't found in the line.");
+                }
+            }
+        }
     }
 
     public static Customer createCustomer()
