@@ -70,9 +70,11 @@ public class LinkedListQueue
             // Searching through the Professor queue here
             for (Customer each_prof : this.professor)
             {
+                // If a match is found, remove that match from the linked list
                 if (Objects.equals(each_prof.getName(), nameToFind))
                 {
-                    System.out.println("Hey! I found " + each_prof.getName());
+                    System.out.println(each_prof.getName() + " is late for class and left the line.");
+                    customers.remove(each_prof);
                 }
             }
 
@@ -81,13 +83,18 @@ public class LinkedListQueue
             {
                 if (Objects.equals(each_student.getName(), nameToFind))
                 {
-                    System.out.println("Hey! I found " + each_student.getName());
+                    System.out.println(each_student.getName() + " got impatient and left the line.");
+                    customers.remove(each_student);
                 }
                 else    // At this point, all the elements of the queues have been searched through
                 {
-                    System.out.println("ERROR. That person wasn't found in the line.");
+                    System.out.println("That person doesn't seem to be in the line...");
                 }
             }
+        }
+        else
+        {
+            System.out.println("The line is empty!");
         }
     }
 

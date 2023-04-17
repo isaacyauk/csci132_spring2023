@@ -53,7 +53,7 @@ public class Program4Demo {
             }
             if(choice == 6)
             {
-               // queue.printQueueStats();
+               queue.printQueueStats();
             }
             if(choice == 7)
             {
