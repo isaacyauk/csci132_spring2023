@@ -3,15 +3,13 @@ public class Program4Demo {
 
     public static void printMenu()
     {
-        System.out.println("");
-        System.out.println("1. View Current Queue");
+        System.out.println("\n1. View Current Queue");
         System.out.println("2. Add student to queue");
         System.out.println("3. Add professor to queue");
         System.out.println("4. Serve next customer");
         System.out.println("5. Remove customer from queue");
         System.out.println("6. Print Queue Statistics");
-        System.out.println("7. Exit");
-        System.out.println("");
+        System.out.println("7. Exit\n");
     }
 
     public static void main(String[] args)
@@ -53,7 +51,7 @@ public class Program4Demo {
             }
             if(choice == 6)
             {
-               //1queue.printQueueStats();
+               queue.printQueueStats();
             }
             if(choice == 7)
             {

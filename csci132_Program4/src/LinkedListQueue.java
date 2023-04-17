@@ -44,6 +44,10 @@ public class LinkedListQueue
 
     public Customer dequeue()
     {
+        int[] waitTimes = new int[0];
+        // TODO: make an array list of wait times after a successful dequeue
+        // TODO: make a counter for how many customers have been served
+
         // Handles edge case of an empty que
         if(this.queueSize != 0 )
         {
@@ -52,18 +56,22 @@ public class LinkedListQueue
             {
                 Customer served =  this.customers.removeFirst();
                 System.out.println(served.getName() + " was served and removed from the line.");
+
+                // TODO: Get current time and figure out how long the person was in the line
+                // Stop tracking the exe TIME here
+                long end_time = System.nanoTime();
                 return served;
             }
             else
             {
                 Customer served =  this.professor.removeFirst();
                 System.out.println(served.getName() + " was served and removed from the line.");
+
+                // TODO: Get current time and figure out how long the person was in the line
+                // Stop tracking the exe TIME here
+                long end_time = System.nanoTime();
                 return served;
             }
-
-            // TODO: Get current time and figure out how long the person was in the line
-            // TODO: make an array list of wait times after a sucessful dequeue
-
         }
         else
         {
@@ -102,7 +110,7 @@ public class LinkedListQueue
                 }
             }
         }
-        else
+        else    // If there is nothing in either of the Lists
         {
             System.out.println("The line is empty!");
         }
@@ -118,8 +126,16 @@ public class LinkedListQueue
         Scanner userResponse2 = new Scanner(System.in);
         String customerOrder = userResponse2.nextLine();
 
+        // Starts tracking the exe TIME here
         long startTime = System.nanoTime();
 
         return new Customer(customerName, customerOrder, startTime);
+    }
+
+    public void printQueueStats()
+    {
+        System.out.println("------- Queue Statistics -------");
+        System.out.println("Average wait time: ");
+        System.out.println("Customers served: ");
     }
 }
