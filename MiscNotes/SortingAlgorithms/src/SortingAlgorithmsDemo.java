@@ -18,6 +18,7 @@ public class SortingAlgorithmsDemo
         long end_time = System.nanoTime();
         double elapsed_time = (end_time - start_time) / 1000000.0; // 6 zeroes is milliseconds; 9 zeroes is seconds
         System.out.println("Elapsed time: " + elapsed_time + " milliseconds.");
+        
 
         //System.out.println(Arrays.toString(sorted_array));
 
