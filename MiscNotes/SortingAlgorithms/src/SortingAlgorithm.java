@@ -56,4 +56,43 @@ public class SortingAlgorithm
 
         return array;
     }
+
+    // Slices up an array by taking smaller and smaller chunks of the array, and sorting thorugh THOSE
+    public int[] quick_sort(int[] array, int start, int end)
+    {
+       // Base Case
+       if (end <= start)
+       {
+           return array;
+       }
+
+       int pivot = partition(array, start, end);
+       quick_sort(array, start, pivot-1); // left side of the array
+       quick_sort(array, pivot+1, end); // right side of the array
+
+       return array;
+    }
+
+    private int partition(int[] array, int start, int end)
+    {
+        int pivot = array[end];
+        int i = start - 1;
+
+        for (int j = start; j < end - 1; j++)
+        {
+            if (array[j] < pivot)
+            {
+                i++;
+                int temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+        i++;
+        int temp = array[i];
+        array[i] = array[end];
+        array[end] = temp;
+
+        return i;
+    }
 }
