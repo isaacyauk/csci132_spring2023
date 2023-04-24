@@ -1,3 +1,6 @@
+// Generally speaking, whenever we eliminate half of the problem each iteration, that will give us O(Logn) running time
+// We can do this on strings too! You have to use "int result = x.compareTo(array[mid])"
+// You can do this with recursion and eliminate the while loop
 public class BinarySearchDemo
 {
     public static void main(String[] args)
