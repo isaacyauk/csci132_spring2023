@@ -29,6 +29,28 @@ public class Lab12Demo
 
     private static int binary_search(int[] array, int n)
     {
-        //TODO: write the algorithm for Binary Search
+        int low = 0;
+        int high = array.length - 1;
+
+        while(low <= high)
+        {
+            int mid = (low + high) / 2;
+             if (n == array[mid])
+             {
+                 return mid;
+             }
+             else if (n > array[mid])
+            {
+                // Discard the left section
+                low = mid +1;
+            }
+             else
+             {
+                 // Discard the right section
+                 high = mid - 1;
+             }
+        }
+
+        return -1;
     }
 }
