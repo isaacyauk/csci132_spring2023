@@ -49,28 +49,28 @@ public class Program5Demo {
         System.out.println(num + " is located at index: " + answer2);
 
         System.out.println("-----------------------------------------------------");
-//        System.out.println("Part III and IV: Finding minimum number of coins");
-//        int k; //target value
-//        int n; // answer for part III
-//        int[] D = {1, 5, 10, 18, 25};
-//
-//        k = 37; //find minimum number of coins from D to make value K
-//        n = min_coins(D, k);
-//        System.out.println("Minimum coins needed to create " + k + ": " + n);
-//        System.out.println("Coins used:");
-//        find_coins(D,k,n);
-//
-//        k = 4; //find minimum number of coins from D to make value K
-//        n = min_coins(D, k);
-//        System.out.println("Minimum coins needed to create " + k + ": " + n);
-//        System.out.println("Coins used:");
-//        find_coins(D,k,n);
-//
-//        k = 81; //find minimum number of coins from D to make value K
-//        n = min_coins(D, k);
-//        System.out.println("Minimum coins needed to create " + k + ": " + n);
-//        System.out.println("Coins used:");
-//        find_coins(D,k,n);
+        System.out.println("Part III and IV: Finding minimum number of coins");
+        int k; //target value
+        int n; // answer for part III
+        int[] D = {1, 5, 10, 18, 25};
+
+        k = 37; //find minimum number of coins from D to make value K
+        n = min_coins(D, k);
+        System.out.println("Minimum coins needed to create " + k + ": " + n);
+        System.out.println("Coins used:");
+        find_coins(D,k,n);
+
+        k = 4; //find minimum number of coins from D to make value K
+        n = min_coins(D, k);
+        System.out.println("Minimum coins needed to create " + k + ": " + n);
+        System.out.println("Coins used:");
+        find_coins(D,k,n);
+
+        k = 81; //find minimum number of coins from D to make value K
+        n = min_coins(D, k);
+        System.out.println("Minimum coins needed to create " + k + ": " + n);
+        System.out.println("Coins used:");
+        find_coins(D,k,n);
 
     }
 
@@ -90,7 +90,6 @@ public class Program5Demo {
         {
             return false;
         }
-
     }
 
     private static int binary_search(int[] array, int num, int low, int high) {
@@ -126,16 +125,36 @@ public class Program5Demo {
     }
 
 
-    private static int min_coins(int[] d, int k) {
+    private static int min_coins(int[] coins, int total_change)
+    {
+        // If you're making change for $0.00
+        if (total_change == 0)
+        {
+            return 0;
+        }
+        else
+        {
+            int min = coins.length;
+            int a = coins.length;
+        }
 
-        //TO DO: Part I: Fill in method using recursion, or have it call another method that uses recursion
-
-        return -1;
+        for (int thing: coins)
+        {
+            if ((total_change - thing) >= 0)
+            {
+                a = min_coins(coins, total_change - thing);
+            }
+            if (a < min)
+            {
+                min = a;
+            }
+        }
+        return 1 + min;
     }
 
     private static void find_coins(int[] d, int k, int n) {
 
-        //TO DO: Part I: Fill in method using recursion, or have it call another method that uses recursion
+        //TODO: Part I: Fill in method using recursion, or have it call another method that uses recursion
 
     }
 
