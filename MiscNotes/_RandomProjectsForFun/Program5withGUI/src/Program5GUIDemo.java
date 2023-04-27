@@ -5,33 +5,43 @@ public class Program5GUIDemo {
 
     public static void main(String[] args) {
 
-        String input = JOptionPane.showInputDialog(null, "Enter a string:");
-        boolean isPalindrome = is_palindrome(input);
-        String message = "Word Entered: " + input + "\nIs palindrome: " + isPalindrome;
-        JOptionPane.showMessageDialog(null, message);
+        // Prompt the user to choose an option
+        String[] options = {"Check if Palindrome", "Binary Search", "Exit"};
+        int selectedOption = JOptionPane.showOptionDialog(null, "Select an option:", "Menu", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
 
-        System.out.println("-----------------------------------------------------");
+        // Handle the selected option
+        switch (selectedOption) {
+            case 0 -> { // Check if Palindrome
+                String input = JOptionPane.showInputDialog(null, "Enter a string:");
+                boolean isPalindrome = is_palindrome(input);
+                String message = "Word Entered: " + input + "\nIs palindrome: " + isPalindrome;
+                JOptionPane.showMessageDialog(null, message);
+            }
+            case 1 -> { // Binary Search
+                int[] array = {2, 6, 12, 14, 17, 19, 20, 23, 27, 29, 32, 37, 40, 42, 45};
 
-        System.out.println("Part II: Binary Search");
+                // Prompt the user to enter a number to search for
+                String searchNumString = JOptionPane.showInputDialog(null, "Enter a number to search for:");
+                int searchNum = Integer.parseInt(searchNumString);
 
-        int[] array = {2, 6, 12, 14, 17, 19, 20, 23, 27, 29, 32, 37, 40, 42, 45};
+                // Call the binary_search method and store the result
+                int result = binary_search(array, searchNum, 0, array.length - 1);
 
-        // Prompt the user to enter a number to search for
-        String searchNumString = JOptionPane.showInputDialog(null, "Enter a number to search for:");
-        int searchNum = Integer.parseInt(searchNumString);
-
-        // Call the binary_search method and store the result
-        int result = binary_search(array, searchNum, 0, array.length - 1);
-
-        // Display the result to the user
-        if (result == -1) {
-            JOptionPane.showMessageDialog(null, searchNum + " was not found in the array.");
-        } else {
-            JOptionPane.showMessageDialog(null, searchNum + " is located at index: " + result);
+                // Display the result to the user
+                if (result == -1) {
+                    JOptionPane.showMessageDialog(null, searchNum + " was not found in the array.");
+                } else {
+                    JOptionPane.showMessageDialog(null, searchNum + " is located at index: " + result);
+                }
+            }
+            case 2 -> // Exit
+                    System.exit(0);
+            default -> {
+            }
+            // Handle invalid selection
         }
-
-        System.out.println("-----------------------------------------------------");
     }
+
 
     private static boolean is_palindrome(String str) {
         if (str.length() <= 1) {
