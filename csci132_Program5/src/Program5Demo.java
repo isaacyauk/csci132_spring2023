@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 public class Program5Demo {
 
@@ -57,19 +58,19 @@ public class Program5Demo {
         k = 37; //find minimum number of coins from D to make value K
         n = min_coins(D, k);
         System.out.println("Minimum coins needed to create " + k + ": " + n);
-        System.out.println("Coins used:");
+        System.out.print("Coins used: ");
         find_coins(D,k,n);
 
         k = 4; //find minimum number of coins from D to make value K
         n = min_coins(D, k);
         System.out.println("Minimum coins needed to create " + k + ": " + n);
-        System.out.println("Coins used:");
+        System.out.print("Coins used: ");
         find_coins(D,k,n);
 
         k = 19; //find minimum number of coins from D to make value K
         n = min_coins(D, k);
         System.out.println("Minimum coins needed to create " + k + ": " + n);
-        System.out.println("Coins used:");
+        System.out.print("Coins used: ");
         find_coins(D,k,n);
 
     }
@@ -150,9 +151,42 @@ public class Program5Demo {
         return 1 + min;
     }
 
-    private static void find_coins(int[] d, int k, int n) {
+    private static void find_coins(int[] d, int k, int n)
+    {
+        int[] chosen = new int[n + 1];
+        int index = 0;
+        int start = 0;
+        int end = d.length - 1;
 
-        //TODO: Part I: Fill in method using recursion, or have it call another method that uses recursion
+        calculate_combinations(chosen, d, index, n, start, end, k);
+    }
+
+    private static void calculate_combinations(int[] chosen, int[] d, int index, int n, int start, int end, int target)
+    {
+        if (index == n)
+        {
+            int counter = 0;
+            ArrayList<Integer> coins = new ArrayList<Integer>();
+
+            for (int i = 0; i < n; i ++)
+            {
+                counter += d[chosen[i]];
+                coins.add(d[chosen[i]]);
+            }
+
+            if (counter == target)
+            {
+                System.out.println(coins);
+            }
+        }
+        else
+        {
+            for (int i = start; i <= end; i++)
+            {
+                chosen[index] = i;
+                calculate_combinations(chosen, d, index + 1, n, i, end, target);
+            }
+        }
 
     }
 

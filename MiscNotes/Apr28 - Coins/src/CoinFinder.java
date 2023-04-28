@@ -9,8 +9,6 @@ public class CoinFinder
         int n = 3;
 
         find_coins(D, k, n);
-
-
     }
 
     private static void find_coins(int[]d, int k, int n)
