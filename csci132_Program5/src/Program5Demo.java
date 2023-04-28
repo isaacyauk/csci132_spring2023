@@ -66,7 +66,7 @@ public class Program5Demo {
         System.out.println("Coins used:");
         find_coins(D,k,n);
 
-        k = 81; //find minimum number of coins from D to make value K
+        k = 19; //find minimum number of coins from D to make value K
         n = min_coins(D, k);
         System.out.println("Minimum coins needed to create " + k + ": " + n);
         System.out.println("Coins used:");
@@ -132,17 +132,15 @@ public class Program5Demo {
         {
             return 0;
         }
-        else
-        {
-            int min = coins.length;
-            int a = coins.length;
-        }
 
-        for (int thing: coins)
+        int min = Integer.MAX_VALUE;
+        int a = Integer.MAX_VALUE;
+
+        for (int some_coin: coins)
         {
-            if ((total_change - thing) >= 0)
+            if ((total_change - some_coin) >= 0)
             {
-                a = min_coins(coins, total_change - thing);
+                a = min_coins(coins, total_change - some_coin);
             }
             if (a < min)
             {
